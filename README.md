@@ -1,3 +1,3 @@
 'KiNO:)))' React + TypeScript + Vite
 
-https://victorivanets.github.io/cinema/start
+https://victorivanets.github.io/cinema
