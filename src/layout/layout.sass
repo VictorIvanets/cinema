@@ -1,0 +1,60 @@
+@import ../sass/variables
+
+
+.app
+    // width: 100vw
+    height: 100vh
+    display: flex
+    flex-direction: column
+    text-align: center
+    justify-content: space-between
+    
+.header
+    width: 100%
+    height: max-content
+    padding: 1rem
+
+.footer
+    width: 100%
+    min-height: 5rem
+    max-height: max-content
+    padding: 1rem
+    
+.main
+    width: 100%
+    height: 85vh
+    display: flex
+    justify-content: space-between
+    @media (max-width: 700px)
+        flex-direction: column
+        height: max-content
+
+.sidebar
+    width: 20%
+    height: 100%
+    padding: 1rem
+    background: #0000001e
+    border-radius: 7px
+    @media (max-width: 700px)
+        width: 100%
+        height: max-content
+
+.startview
+    width: 57%
+    height: 100%
+    padding: 1rem
+    @media (max-width: 700px)
+        width: auto
+        height: auto
+.sidebarrightbox
+    width: 20%
+    height: 100%
+    background: #0000001e
+    border-radius: 7px
+    padding: 1rem
+    overflow: hidden
+    @media (max-width: 700px)
+        width: 100%
+        height: max-content
+
+

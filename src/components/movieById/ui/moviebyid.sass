@@ -1,0 +1,64 @@
+@import ../../../sass/variables
+
+.moviebyid
+    width: 100%
+    height: 100%
+    background: #000000a6
+    padding: 1rem
+    border-radius: 7px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: flex-start
+    &__infobox
+        display: flex
+        align-items: space-between
+    &__info
+        text-align: left
+        padding: 1rem 2rem
+        p
+            line-height: 2rem
+        span
+            color: $COLORACCENT
+
+    &__poster
+        width: 40%
+        padding: 1rem 0rem
+    &__plot
+        text-align: left
+        line-height: 1.7rem
+    &__btnbox
+        width: 100%
+        height: 4rem
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__like
+        cursor: pointer
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 0.3rem
+        transition: scale 0.2s
+        p
+            font-size: 1.2rem
+
+            span
+                font-size: 2rem
+                color: $COLORACCENT
+        &:hover
+            scale: 1.1
+            transition: scale 0.2s
+
+
+    &__back
+        cursor: pointer
+        transition: transform 0.2s
+
+        &:hover
+            transform: translateX(-5px)
+            transition: transform 0.2s
+
+    
+    
+    

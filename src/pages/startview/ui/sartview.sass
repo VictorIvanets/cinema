@@ -1,0 +1,71 @@
+@import ../../../sass/variables
+    
+.startcontainer
+    width: 100%
+    height: 100%
+    overflow: hidden
+    text-align: left
+
+    &__select
+        display: flex
+        justify-content: space-between
+    &__content
+        width: 100%
+        height: 44%
+        display: flex
+        justify-content: center
+        align-items: center
+        text-align: center
+        margin-bottom: 2rem
+        background: #0000001e
+        
+    &__swiperbox
+        width: 100%
+        height: 100%
+        text-align: center
+        @media (max-width: 720px)
+            height: max-content
+    &__item
+        width: 80vw
+        text-align: center
+        padding: 2rem
+        display: flex
+        justify-content: center
+        align-items: center
+        text-align: center
+        @media (max-width: 720px)
+            padding: 0
+        &__next
+            width: 100%
+            height: 20rem
+            text-align: center
+            padding: 2rem
+            display: flex
+            justify-content: center
+            align-items: center
+            text-align: center
+            button
+                height: 50%
+
+    &__search
+        width: 100%
+        height: 4rem
+        padding: 0.5rem
+        display: flex
+        &__iconbtn
+            width: 3rem
+            height: 100%
+            position: relative   
+        &__btn
+            padding: 0
+            position: absolute
+            top: 0
+            right: 5px
+
+
+.swiper-wrapper
+    height: 100%
+    align-items: center
+    @media (max-width: 720px)
+        height: none
+        align-items: center

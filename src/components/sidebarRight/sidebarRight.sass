@@ -1,0 +1,70 @@
+@import ../../sass/variables
+
+.sidebarright
+    width: 100%
+    height: 85vh
+
+    
+    &__search
+        width: 100%
+        height: 4rem
+        padding: 0.5rem
+        display: flex
+        position: relative
+        &__iconbtn
+            width: 3rem
+            height: 100%
+            position: absolute
+            top: 1rem
+            right: 0
+
+
+    &__content
+        width: 100%
+        height: 100%
+        overflow: auto
+        scrollbar: 0px 
+        padding-bottom: 7rem
+        @media (max-width: 700px)
+            width: 100%
+            // height: 25rem
+    &__content::-webkit-scrollbar
+            width: 3px
+    &__content::-webkit-scrollbar-thumb
+            width: 3px
+            background: $COLORACCENT
+
+
+
+
+    &__seemore
+        width: 100%
+        height: 1.5rem
+        cursor: pointer
+        transition: background 0.2s
+        &:hover
+            background: #000
+            transition: background 0.2s
+            border-radius: 7px
+        p
+            &:hover
+                color: $COLORACCENT
+            
+    &__itemmovies
+        width: 100%
+        height: max-content
+        margin-bottom: 0.3rem
+        padding: 3px 5px
+        border-radius: 5px
+        text-align: left
+        cursor: pointer
+        transition: all 0.2
+        &:hover
+            background: #00000079
+            transition: all 0.2
+            h4
+                color: $COLORACCENT
+
+    @media (max-width: 700px)
+        width: 100%
+        height: max-content           
