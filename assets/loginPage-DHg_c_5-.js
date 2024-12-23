@@ -1,0 +1,1 @@
+import{r as t,n,j as e}from"./index-BGTdml55.js";const i=t.memo(({})=>{const{start:r,complete:o}=n({color:"red",height:10});return t.useEffect(()=>{r();let s=setTimeout(()=>{o()},500);return()=>clearTimeout(s)},[]),e.jsx(e.Fragment,{children:e.jsx("div",{className:"logincontainer",children:e.jsx("h1",{children:"LogiPage"})})})});export{i as default};
