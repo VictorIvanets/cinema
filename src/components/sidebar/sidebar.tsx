@@ -17,7 +17,7 @@ export default function SideBar() {
 				</h3>
 				<p>FAVORITES</p>
 			</NavLink>
-			<NavLink to={'/loader'} className="sidebarcontainer__linkitem">
+			<NavLink to={'/login'} className="sidebarcontainer__linkitem">
 				<h3>
 					<MaterialIcon name="MdPerson" />
 				</h3>

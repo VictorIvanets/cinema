@@ -6,6 +6,7 @@ import { ResponseMovie } from '../../api/api.types'
 import { getSearchMovies } from '../../api/api.movies'
 import { Preloader } from '../preloaders/PreloaderBall'
 import ItemSearchMovies from './itemSearch'
+import { useLoadingBar } from 'react-top-loading-bar'
 
 export default function SidebarRight() {
 	const [inputValue, setInputValue] = useState<string>('')
@@ -14,6 +15,10 @@ export default function SidebarRight() {
 	const [isLoadingLoad, setIsLoading] = useState<boolean>(false)
 	const [erorrLoad, setError] = useState<string | null>(null)
 	const debounceValue = useDebounce<string>(inputValue, 700)
+	const { start, complete } = useLoadingBar({
+		color: 'red',
+		height: 5,
+	})
 
 	function getNextValue(next: number) {
 		setNextValue(next)
@@ -32,6 +37,7 @@ export default function SidebarRight() {
 			setData([])
 			setNextValue(1)
 		}
+		start()
 
 		debounceValue.length &&
 			getSearchMovies(
@@ -42,6 +48,7 @@ export default function SidebarRight() {
 				setIsLoading,
 				dataLoad,
 			)
+		complete()
 	}, [debounceValue])
 
 	return (

@@ -12,6 +12,7 @@ import MaterialIcon from '../../../shared/icons/Materialicons'
 import { favorDataActions } from '../../../store/slice/favoriteData.slice'
 import BtnBack from '../../../widgets/btnBack/BtnBack'
 import MovieInfo from '../../../widgets/movieInfo/movieInfo'
+import { toastrForFavorotes } from '../../../store/toastr/toastrForFavorites'
 
 export default function MoviesById() {
 	const { id } = useParams()
@@ -33,12 +34,14 @@ export default function MoviesById() {
 		(dataLoad: IMovieByID) => {
 			dispatch(favorActions.AddMovie(dataLoad.imdbID))
 			dispatch(favorDataActions.AddMovie(dataLoad))
+
 			setCheckFav(false)
 		},
 		[dataLoad],
 	)
 
 	useEffect(() => {
+		console.log(checkFav)
 		setTimeout(() => {
 			dataLoad && chekFavorites(dataLoad, movieId)
 		})
@@ -76,7 +79,10 @@ export default function MoviesById() {
 			<div className="moviebyid__btnbox">
 				<div
 					className="moviebyid__like"
-					onClick={() => favoritHendler(dataLoad)}
+					onClick={() => {
+						favoritHendler(dataLoad)
+						toastrForFavorotes(checkFav, dataLoad.Title)
+					}}
 				>
 					<h2 style={checkFav ? { color: 'white' } : {}}>
 						<MaterialIcon name="MdFavorite" />

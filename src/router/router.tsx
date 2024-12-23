@@ -5,6 +5,7 @@ import StartView from '../pages/startview/ui/satrtview'
 import { Preloader } from '../components/preloaders/PreloaderBall'
 import { MoviesById } from '../components/movieById'
 import { FavoritesPage } from '../pages/favorites'
+import { LoginPage } from '../pages/loginPage'
 
 export const router = createBrowserRouter(
 	[
@@ -24,10 +25,10 @@ export const router = createBrowserRouter(
 				},
 
 				{
-					path: 'loader',
+					path: 'login',
 					element: (
 						<Suspense fallback={<Preloader />}>
-							<Preloader />
+							<LoginPage />
 						</Suspense>
 					),
 				},
