@@ -16,7 +16,7 @@ export default function Header() {
 				<NavLink to={'/favor'} className="headercontainer__linkitem">
 					<p>FAVORITES</p>
 				</NavLink>
-				<NavLink to={'/loader'} className="headercontainer__linkitem">
+				<NavLink to={'/login'} className="headercontainer__linkitem">
 					<p>LOGIN</p>
 				</NavLink>
 			</div>

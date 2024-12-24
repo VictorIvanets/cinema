@@ -6,6 +6,7 @@ import { changeScreenForSwiper } from '../../../helpers/changeScreen'
 import CheckBox from '../../../widgets/checkBox/checkBox'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { getMoviesForStart } from '../../../api/api.movies'
+import { useLoadingBar } from 'react-top-loading-bar'
 
 interface ISwiperItemProps {
 	defaultMovie: string
@@ -18,11 +19,16 @@ export const SwiperItem = memo(
 		const [dataLoad, setData] = useState<ResponseMovie[] | undefined>()
 		const [yearMovies, setYearMovies] = useState<string | undefined>()
 		const [erorrLoad, setError] = useState<string | null>(null)
-
+		const { start, complete } = useLoadingBar({
+			color: 'red',
+			height: 5,
+		})
 		const getValue = useCallback(
 			async (yearMovies: string) => {
+				start()
 				const data = await getMoviesForStart(defaultMovie, yearMovies, setError)
 				data && setData(data)
+				complete()
 			},
 			[yearMovies],
 		)

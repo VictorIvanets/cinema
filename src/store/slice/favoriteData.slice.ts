@@ -6,7 +6,6 @@ interface IFavorData {
     movieData: IMovieByID[]
 }
 
-
 const initialState: IFavorData = {
 	movieData: [],
 }
