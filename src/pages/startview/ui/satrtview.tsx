@@ -1,20 +1,17 @@
-import './sartview.sass'
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import { SwiperItem } from './swiperItem'
+import { SwiperItem } from './index.swiperItem'
 import { memo } from 'react'
+import './sartview.sass'
 
 const startMovie = [
-	{ mavie: 'christmas', year: '', id: 1 },
-	{ mavie: 'new', year: '2024', id: 2 },
+	{ movie: 'christmas', year: '', id: 1 },
+	{ movie: 'new', year: '2024', id: 2 },
 ]
 
 const StartView = memo(() => {
 	return (
 		<div className="startcontainer">
 			{startMovie.map((i) => (
-				<SwiperItem key={i.id} defaultMovie={i.mavie} defaultYear={i.year} />
+				<SwiperItem key={i.id} defaultMovie={i.movie} defaultYear={i.year} />
 			))}
 		</div>
 	)
