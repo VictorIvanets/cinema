@@ -1,0 +1,1 @@
+import{j as s}from"./index-BdJF97gq.js";function m({src:e,alt:r,width:t="100%",height:i="75%"}){return s.jsx("div",{style:{width:t,height:i},className:"picturebox",children:s.jsx("img",{className:"picture",src:e,alt:r})})}export{m as I};
