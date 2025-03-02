@@ -25,6 +25,7 @@
     height: 85vh
     display: flex
     justify-content: space-between
+    position: relative
     @media (max-width: 700px)
         flex-direction: column
         height: max-content
@@ -37,7 +38,30 @@
     border-radius: 7px
     @media (max-width: 700px)
         width: 100%
+        overflow: hidden
         height: max-content
+        transition: 0.2s all
+.sidebar-hidden
+    @media (max-width: 700px)
+        height: 0rem
+        transition: 0.2s all
+        padding: 0rem
+    &__btn 
+        display: none
+        @media (max-width: 700px)
+            display: block
+            width: 100%
+            cursor: pointer
+            margin-top: 1rem
+            height: 2.5rem
+            transition: 0.2s all
+            span
+                font-size: 1.2rem
+                color: $COLORACCENT
+            h2
+                text-align: center
+
+
 
 .startview
     width: 57%

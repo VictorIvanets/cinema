@@ -10,6 +10,7 @@ import { useLoadingBar } from 'react-top-loading-bar'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import { PreLoaderGradient } from '../../../../components/preloaders/PreloaderGradient'
 
 interface ISwiperItemProps {
 	defaultMovie: string
@@ -60,7 +61,7 @@ const SwiperItem = memo(({ defaultMovie, defaultYear }: ISwiperItemProps) => {
 						))}
 					</Swiper>
 				) : (
-					<Preloader />
+					<PreLoaderGradient />
 				)}
 			</div>
 		</>

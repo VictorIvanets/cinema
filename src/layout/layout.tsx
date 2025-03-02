@@ -4,16 +4,32 @@ import Header from '../components/header/header'
 import SideBar from '../components/sidebar/sidebar'
 import './layout.sass'
 import SidebarRight from '../components/sidebarRight/sidebarRight'
-import { memo } from 'react'
+import { memo, useState } from 'react'
+import MaterialIcon from '../shared/icons/Materialicons'
 
 const Layout = memo(() => {
+	const [hiddenSideBar, setHiddenSideBar] = useState(true)
 	return (
 		<>
 			<header className="header">
 				<Header />
 			</header>
 			<main className="main">
-				<nav className="sidebar">
+				<div
+					onClick={() => setHiddenSideBar(!hiddenSideBar)}
+					className="sidebar-hidden__btn"
+				>
+					{!hiddenSideBar ? (
+						<h2>
+							<MaterialIcon name="MdExpandLess" />
+						</h2>
+					) : (
+						<h3>
+							<span>MAIN MENU</span>
+						</h3>
+					)}
+				</div>
+				<nav className={`sidebar ${hiddenSideBar && 'sidebar-hidden'}`}>
 					<SideBar />
 				</nav>
 				<section className="startview">

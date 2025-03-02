@@ -6,7 +6,6 @@ const startMovie = [
 	{ movie: 'christmas', year: '', id: 1 },
 	{ movie: 'new', year: '2024', id: 2 },
 ]
-
 const StartView = memo(() => {
 	return (
 		<div className="startcontainer">
