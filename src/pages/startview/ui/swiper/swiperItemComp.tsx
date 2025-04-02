@@ -1,7 +1,6 @@
 import { memo, useCallback, useEffect, useState } from 'react'
 import { ResponseMovie } from '../../../../api/api.types'
 import ItemMovies from '../../../../components/itemMovie/itemMovie'
-import { Preloader } from '../../../../components/preloaders/PreloaderBall'
 import { changeScreenForSwiper } from '../../../../helpers/changeScreen'
 import CheckBox from '../../../../widgets/checkBox/checkBox'
 import { Swiper, SwiperSlide } from 'swiper/react'
