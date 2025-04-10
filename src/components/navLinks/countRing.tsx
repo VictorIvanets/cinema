@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { IMovieByID } from '../../api/api.types'
 import AnimatableElasticItem from '../animation/AnimatableElasticItem'
 import { Power } from '../animation/AnimatableElasticItem.types'
-import './sidebar.sass'
+import './nav.sass'
 import { useReload } from '../../hooks/useReload'
 interface countRingProps {
 	movieDataFavor: IMovieByID[]
@@ -19,7 +19,7 @@ const CountRing = ({ movieDataFavor }: countRingProps) => {
 				<AnimatableElasticItem
 					power={Power.hadrd}
 					duration={4000}
-					className="sidebarcontainer__favorcount"
+					className="linkitem__favorcount"
 					starting={true}
 					valuePercent={100}
 				>

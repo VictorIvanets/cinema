@@ -1,13 +1,24 @@
-import { memo, useEffect } from 'react'
+import { memo, useEffect, useState } from 'react'
 import './loginpage.sass'
 import { useLoadingBar } from 'react-top-loading-bar'
 import AnimatabelItem from '../../../components/animation/AnimatabelItem'
-import AnimatableElasticItem from '../../../components/animation/AnimatableElasticItem'
-import { Power } from '../../../components/animation/AnimatableElasticItem.types'
-
-//page for testing LoadingBar
+import { LogInComponent } from '../../../components/logInComponent'
+import { LOCAL_JWT_KEY } from '../../../components/logInComponent/key/jwtkey'
+import Account from '../../../components/account/account'
+import SetUserInfo from '../../../components/logInComponent/ui/setUserInfo'
+import {
+	TUrerData,
+	TypeSetInfo,
+} from '../../../components/logInComponent/types/auth.types'
 
 const loginPage = memo(() => {
+	const [isLogin, setIsLogin] = useState(false)
+	const [isUpdate, setIsUpdate] = useState(false)
+	const [isAccessJWT, setIsAccessJWT] = useState<string | null>(null)
+	const [oldValue, setOldValue] = useState<TUrerData | null>(null)
+
+	const updateHendler = () => setIsUpdate(!isUpdate)
+
 	const { start, complete } = useLoadingBar({
 		color: 'red',
 		height: 10,
@@ -20,23 +31,53 @@ const loginPage = memo(() => {
 		return () => clearTimeout(timerId)
 	}, [])
 
+	useEffect(() => {
+		const localjwt = localStorage.getItem(LOCAL_JWT_KEY)
+		localjwt && setIsAccessJWT(localjwt)
+	}, [isAccessJWT, isLogin])
+
+	const exitHendler = () => {
+		localStorage.removeItem(LOCAL_JWT_KEY)
+		setIsAccessJWT(null)
+	}
+
 	return (
-		<>
-			<AnimatabelItem className="logincontainer">
-				<AnimatableElasticItem
-					power={Power.hadrd}
-					duration={4000}
-					starting={true}
-					valuePercent={100}
-				>
-					<h1>LOGIN PAGE</h1>
-					<h1>тут ще не придумав що робити</h1>
-					<a href="https://victorivanets.github.io/fishapp/">
-						<h3>відвідайте, поки що, Fishing App</h3>
-					</a>
-				</AnimatableElasticItem>
-			</AnimatabelItem>
-		</>
+		<AnimatabelItem className="logincontainer">
+			{!isAccessJWT ? (
+				<>
+					{isLogin ? (
+						<LogInComponent close={() => setIsLogin(!isLogin)} />
+					) : (
+						<h1
+							className="logincontainer__enterbtn"
+							onClick={() => setIsLogin(!isLogin)}
+						>
+							☺ вхід у аккаунт
+						</h1>
+					)}
+				</>
+			) : (
+				<div className="logincontainer__infobar">
+					{!isUpdate ? (
+						<Account
+							isAccessJWT={isAccessJWT}
+							exitHendler={() => exitHendler()}
+							updateHendler={updateHendler}
+							setOldValue={setOldValue}
+						/>
+					) : (
+						<div className="logincontainer__infobar__update">
+							<SetUserInfo
+								type={TypeSetInfo.UPDATE}
+								jwt={isAccessJWT}
+								close={updateHendler}
+								oldValue={oldValue}
+							/>
+						</div>
+					)}
+				</div>
+			)}
+		</AnimatabelItem>
 	)
 })
 
