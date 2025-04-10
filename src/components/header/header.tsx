@@ -1,6 +1,6 @@
-import { NavLink } from 'react-router-dom'
 import './header.sass'
 import Logo from '/kino.svg'
+import NavLinks from '../navLinks/navLinks'
 
 export default function Header() {
 	return (
@@ -8,18 +8,7 @@ export default function Header() {
 			<div className="headercontainer__logobox">
 				<img className="headercontainer__logo" src={Logo} alt="logo" />
 			</div>
-
-			<div className="headercontainer__linkbox">
-				<NavLink to={'/start'} className="headercontainer__linkitem">
-					<p>HOME</p>
-				</NavLink>
-				<NavLink to={'/favor'} className="headercontainer__linkitem">
-					<p>FAVORITES</p>
-				</NavLink>
-				<NavLink to={'/login'} className="headercontainer__linkitem">
-					<p>LOGIN</p>
-				</NavLink>
-			</div>
+			<NavLinks classname={'headercontainer__linkbox'} />
 		</div>
 	)
 }

@@ -11,3 +11,16 @@ export const toastrForFavorotes = (check: boolean, title: string) => {
                 className: 'addfavortoastr',
             })
 }
+
+export const toastrForError = (title: string) => {
+   toastr.error('ERROR', `${title}`, {
+                progressBar: true,
+                className: 'addfavortoastr',
+            })
+}
+export const toastrForSuccess = (title: string) => {
+   toastr.success('ADD INFO', `${title}`, {
+                progressBar: true,
+                className: 'addfavortoastr',
+            })
+}

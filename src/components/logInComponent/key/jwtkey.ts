@@ -1,0 +1,1 @@
+export const LOCAL_JWT_KEY = "cinema_jwt"
