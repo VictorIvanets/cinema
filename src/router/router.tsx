@@ -62,7 +62,7 @@ export const router = createBrowserRouter(
 	],
 
 	{
-		basename: '/cinema',
+		basename: '/',
 		future: {
 			v7_relativeSplatPath: true,
 			v7_partialHydration: true,
