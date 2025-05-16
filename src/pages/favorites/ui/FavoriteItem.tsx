@@ -12,10 +12,8 @@ import MovieInfo from '../../../widgets/movieInfo/movieInfo'
 interface IFavoriteItem {
 	dataLoad: IMovieByID
 }
-
 export default function FavoriteItem({ dataLoad }: IFavoriteItem) {
 	const dispatch = useDispatch<AppDispath>()
-
 	return (
 		<div className="favorites__item">
 			<div className="favorites__leftbox">
@@ -38,7 +36,6 @@ export default function FavoriteItem({ dataLoad }: IFavoriteItem) {
 			</div>
 			<div className="favorites__info">
 				<h3>{dataLoad.Title}</h3>
-
 				<p>
 					<span>{dataLoad.Type}</span>
 				</p>

@@ -12,7 +12,6 @@ const FavoritesPageContent = memo(() => {
 	const movieDataFavor = useSelector(
 		(state: RootState) => state.favorData.movieData,
 	)
-
 	return (
 		<>
 			<div className="favorites__header">
